@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+String packagePath = 'net.frankheijden.insights.addons.uskyblock'
+group = packagePath
+version = '1.0.0'
+description = 'USkyBlockAddon'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://papermc.io/repo/repository/maven-public/' }
+    maven { url 'https://jitpack.io' }
+    maven { url 'https://maven.sk89q.com/repo/' }
+    flatDir { dirs 'libs' }
+}
+
+dependencies {
+    compileOnly 'com.github.FrankHeijden:Insights:feature~cache-SNAPSHOT'
+    compileOnly 'com.destroystokyo.paper:paper-api:1.15.2-R0.1-SNAPSHOT'
+    compileOnly name: 'uSkyBlock-2.8.7'
+    compileOnly 'com.sk89q.worldguard:worldguard-bukkit:7.0.2'
+}
